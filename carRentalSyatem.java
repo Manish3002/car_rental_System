@@ -14,12 +14,23 @@ public class carRentalSyatem {
 	 customers = new ArrayList<>();
      rentals = new ArrayList<>();
  }
+// in this i have done the adding of cars by using car_class datatype to get the the same datatype of all we used in the same cr_class
  public void addCar(car_class car) {
      cars.add(car);
  }
-
+//in this i have done the adding of customers  by using car_class datatype to get the the same datatype of all we used in the same customers
  public void addCustomer(customer customer) {
      customers.add(customer);
  }
  
+ // in this we will be checking whether the class is available or not before taking the car rent
+ public void rentCar( car_class car, customer cust, int days) {
+	 if(car.isAvailable()) {
+		 car.rent(); // we make this car as false because if its avilable we will assign to the customer so we make it as false.
+		 rentals.add(new rental(car,cust,days));
+	 }else {
+		 System.out.println(" Car is not avilable ");
+	 }
+ }
 }
+
